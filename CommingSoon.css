@@ -1,0 +1,34 @@
+body
+{
+    display: grid;
+    grid-template-columns: 300px 1236px;
+    background-color: var(--light_blue);
+    margin: 0px 0px;
+    min-height: 100%;
+}
+
+.main
+{
+    display: grid;
+    grid-gap: 10px;
+    margin-left: 40px;
+    margin-top: 100px;
+    justify-content: space-around;
+}
+
+
+.workingLogo
+{
+    background-color: black;
+    background-image: url('commingSoon.gif');    
+    margin: 50px auto;
+    min-width: 800px;
+    max-width: 1200px;
+    height: 400px;
+    background-repeat: no-repeat;
+    background-size: 850px 350px;
+    border: 2px groove black;
+    border-radius: 10px;
+    padding: 15px 15px;
+    box-shadow:10px 10px 30px black;
+}

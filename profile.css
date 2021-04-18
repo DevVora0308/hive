@@ -1,0 +1,55 @@
+body {
+   display: grid;
+   grid-template-columns: 350px 1236px;
+   background-color:var(--light_blue);
+   margin: 0px 0px;
+   min-height: 100%;
+}
+
+.column2 {
+   float: left;
+   width: 90%;
+   margin-top: 70px;
+}
+
+input[type=text] {
+ width: 25%;
+ margin-right: 20px;
+ padding: 5px;
+ border: 2px solid black;
+ border-radius: 3px;
+}
+
+input[type=submit]{
+   background-color:#272727;
+   color: #64DFDF;
+
+}
+
+label {
+ margin-bottom: 10px;
+ display: block;
+}
+
+.card {
+ border-radius: 5px;
+ padding-left: 30px;
+ padding-top: 10px;
+ text-align: left;
+ height:1200px;
+}
+
+input {
+ width: 300px;
+ height: 3em;
+ margin-bottom: 40px;
+ border: 2px solid black;
+}
+
+.custom-select select {
+   width: 300px;
+   height: 50px;
+   position: relative;
+   border: 2px solid black;
+   border-radius: 3px;
+}

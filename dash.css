@@ -1,0 +1,171 @@
+body
+{
+    display: grid;
+    grid-template-columns: 300px 1236px;
+    background-color: var(--light_blue);
+    margin: 0px 0px;
+    min-height: 100%;
+}
+
+.dashboard
+{
+    display: grid;
+    grid-gap: 10px;
+    margin-left: 40px;
+    margin-top: 100px;
+    justify-content: space-around;
+}
+
+.dash
+{
+    background-color: var(--black);
+    text-align: center;
+    padding: 20px;
+    font-size: 30px;
+    color: white;
+    height: 200px;
+    min-width: 200px;
+    max-width: 480px;
+    border-radius: 25px;
+    align-self: center;
+    margin: 10px;
+    display: grid;
+    grid-template-rows: auto auto auto;
+}
+
+#circle-container {
+    width: 200px;
+    height: 200px;
+    margin: 50px auto;
+}
+
+.item1, .item2, .item3
+{
+    grid-row: 1/2;
+    grid-column: 1/2;
+    color: #30FF00;
+}
+
+.dashIcon
+{
+    grid-row: 1/2;
+}
+
+.data
+{
+    grid-row: 2/3;
+    font-weight: bold;
+}
+
+.dataText
+{
+    grid-row: 3/4;
+    width: 200px;
+    font-weight: bold;
+}
+
+.item2
+{
+    grid-column: 2/3;
+    border-radius: 100%;
+    color: #FA163F;
+}
+
+.item3
+{
+    grid-column: 3/ span 2;
+    color: #099FFF;
+    justify-content: center;
+    justify-items: center;
+}
+
+.item3 #myLineChart
+{
+    grid-row: 1 / span 2;
+}
+
+.item3 .dataText
+{
+    grid-row: 3/4;
+}
+
+.item4, .item5, .item6
+{
+    grid-row: 2/3;
+    grid-column: 1/ span 2;
+    color: #FFFF00;
+}
+
+.item4
+{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto;
+    justify-items: center;
+}
+
+.item4 .ratingCol1
+{
+    grid-row: 1 / span 3;
+    align-items: center;
+    justify-content: center;
+    display: grid;
+    grid-template-rows: auto auto;
+    justify-items: center;
+}
+
+.item4 .ratingCol1 .row1
+{
+    grid-row: 1/2;
+}
+
+.item4 .ratingCol1 .row2
+{
+    grid-row: 2/3;
+}
+
+.item4 .data .big
+{
+    font-weight: bolder;
+    font-style: italic;
+}
+
+.item4 .dataText
+{
+    grid-row: 3/4;
+    width: 300px;
+    font-weight: bold;
+}
+
+.item5
+{
+    grid-column: 3/4;
+    color: #CC00FF;
+}
+
+.item6
+{
+    grid-column: 4/5;
+    border-radius: 100%;
+    color: #FF6600;
+}
+
+.item7
+{
+    grid-row: 3/4;
+    grid-column: 2/ span 2;
+    color: #00FFFF;
+    justify-content: center;
+    height: 300px;
+}
+
+.item7 .dataText
+{
+    grid-row: 1/2;
+    width: inherit;
+}
+
+.item7 #pieChart
+{
+    grid-row: 2 / span 3;
+}

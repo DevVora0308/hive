@@ -1,0 +1,36 @@
+<html>
+
+<head>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-database.js"></script>
+  <script src="firebase-app.js"></script>
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+          https://firebase.google.com/docs/web/setup#available-libraries -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="getSideBar.js"></script>
+  <script src="getPageName.js"></script>
+  <script src="displayTable.js"></script>
+  <link rel="stylesheet" type="text/css" href="ViewPage.css">
+  <script src="firebase-app.js"></script>
+  <title>View Customer</title>
+</head>
+
+<body onload="getPageName()">
+  <div w3-include-html="sideBar.html"></div>
+  <script>
+    includeHTML();
+  </script>
+  <form id="idForm" class="idForm" action="?" method="post">
+    <label for="searchId">Customer Id.:</label>
+    <input type="text" id="searchId" name="searchId" required placeholder="Enter the Customer Id."><br><br>
+    <!-- <input type="submit" value="Submit" onclick="displayTable();"> -->
+    <button type="button" value="Submit" onclick="displayCustomersTable();">Get Records</button>
+    <div id="dataTable"></div>
+  </form>
+</body>
+</html>

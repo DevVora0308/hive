@@ -1,0 +1,107 @@
+body {
+    display: grid;
+   grid-template-columns: 350px 1236px;
+   background-color:var(--light_blue);
+   margin: 0px 0px;
+   min-height: 100%;
+}
+
+.column2 {
+   float: left;
+   width: 90%;
+   margin-top: 70px;
+}
+
+/* input[type=text] {
+ width: 25%;
+ margin-right: 20px;
+ padding: 5px;
+ border: 2px solid black;
+ border-radius: 3px;
+} */
+
+/* label {
+ margin-bottom: 10px;
+ display: block;
+} */
+
+.card {
+ border-radius: 5px;
+ padding-left: 30px;
+ padding-top: 10px;
+ text-align: left;
+ height:800px;
+}
+
+/* input {
+ width: 300px;
+ height: 3em;
+ margin-bottom: 40px;
+ color: navy;
+ border: 2px solid black;
+} */
+
+.button {
+   color: navy;
+}
+
+.custom-select select {
+    width: 300px;
+    height: 50px;
+    position: relative;
+    border: 2px solid black;
+    border-radius: 3px;
+}
+
+.idForm {
+   margin: 50px 100px;
+   color: var(--black);
+   font-size: x-large;
+   width: fit-content;
+   font-weight: bold;
+ }
+ .idForm input::placeholder, .idForm textarea::placeholder {
+   color: var(--black);
+   font-weight: bold;
+   min-width: 200px;
+ }
+ 
+ .idForm input, .idForm textarea {
+   background-color: var(--dark_blue);
+   color: var(--black);
+   border: 2px solid var(--black);
+   border-radius: 25px;
+   font-size: large;
+   padding: 10px;
+   font-weight: bold;
+   margin-bottom: 25px;
+ }
+ .idForm textarea
+ {
+   margin-bottom: 10px;
+ }
+ .idForm button[type="button"] {
+   font-size: large;
+   padding: 10px;
+   background-color: #03396d;
+   color: var(--light_blue);
+   border: 2px solid var(--black);
+   border-radius: 25px;
+ }
+ 
+ #idForm {
+   display: block;
+ }
+ 
+.error
+{
+  color: red;
+  font-weight: bolder;
+  padding: auto;
+}
+
+.error::before, .error::after
+{
+  content: "\A";
+  white-space: pre-wrap;
+}

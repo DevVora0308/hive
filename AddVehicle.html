@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- The core Firebase JS SDK is always   and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-database.js"></script>
+  <script src="firebase-app.js"></script>
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+          https://firebase.google.com/docs/web/setup#available-libraries -->
+  <link rel="stylesheet" type="text/css" href="AddPage.css">
+	<meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="getSideBar.js"></script>
+  <script src="getPageName.js"></script>
+  <script src="displayTable.js"></script>
+  <script src="firebase-app.js"></script>
+	<title>Add Vehicle</title>
+</head>  
+<body onload="getPageName()">
+  <div w3-include-html="sideBar.html"></div>
+  <script>
+    includeHTML();
+  </script>
+  <div class="column2">
+    <div class="card">
+    	<h1><i><u>Add Vehicle Information</u></i></h1><hr>
+      <form id="idForm" class="idForm" action="?" method="post">
+            <!-- <label for="vin">VIN:</label>
+            <input type="text" name="vin" id="vin" autocomplete="Off" placeholder="Vehicle Identification No." >
+            <span id="errorVIN"></span><br> -->
+            <label for="categoryName">Vehicle Category:</label>
+            <input type="radio" name="categoryName" id="biCycle" value="Bicycle"> Bicycle
+            <input type="radio" name="categoryName" id="motorCycle" value="Motor-Cycle"> Motor-Cycle
+            <input type="radio" name="categoryName" id="autoRickshaw" value="Auto-Rickshaw"> Auto-Rickshaw
+            <input type="radio" name="categoryName" id="taxi" value="Taxi"> Taxi
+            <input type="radio" name="categoryName" id="car" value="Car"> Car
+            <span id="errorCategoryName"><br>
+            <label for="vehicleName">Vehicle Name:</label>
+            <input type="text" name="vehicleName" id="vehicleName" autocomplete="Off" placeholder="Ex. Maruti" >
+            <span id="errorVehicleName"></span><br>
+            <label for="vehicleModel">Vehicle Model Id.:</label>
+            <input type="text" name="vehicleModel" id="vehicleModel" autocomplete="Off" placeholder="Ex. MSCR12Y" >
+            <span id="errorVehicleModel"></span><br>
+            <label for="vehiclePlateNo">Vehicle Plate No.:</label>
+            <input type="text" name="vehiclePlateNo" id="vehiclePlateNo" autocomplete="Off" placeholder="Ex. MH 04 KO 9876" >
+            <span id="errorVehiclePlateNo"></span><br>
+        <button type="button" value="ADD EMPLOYEE" name="addEmp" class="button" onclick="validateVehicle()">Add Vehicle</button>
+    </form>
+    </div>
+  </div>
+</body>
+</html>

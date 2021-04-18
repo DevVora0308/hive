@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-database.js"></script>
+  <script src="firebase-app.js"></script>
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+      https://firebase.google.com/docs/web/setup#available-libraries -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="getSideBar.js"></script>
+  <script src="getPageName.js"></script>
+  <script src="displayTable.js"></script>
+  <link rel="stylesheet" href="dash.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.1/Chart.min.js"></script>
+  <script src="firebase-app.js"></script>
+  <script src="progressBar.js"></script>
+  <title>HiVe - Dashboard</title>
+</head>
+
+<body onload="getPageName(); initFirebase();">
+  <div w3-include-html="sideBar.html"></div>
+  <script>
+    includeHTML();
+  </script>
+  <div class="dashboard">
+    <div class="dash item1">
+      <i class="dashIcon fa fa-car fa-2x" aria-hidden="true"></i>
+      <span class="data">700+</span>
+      <span class="dataText">Rides Booked</span>
+    </div>
+    <div class="dash item2">
+      <i class="dashIcon fa fa-smile-o fa-2x" aria-hidden="true"></i>
+      <span class="data">600+</span>
+      <span class="dataText">Happy Customers</span>
+    </div>
+    <div class="dash double item3">
+      <span class="data">
+        <canvas id="myLineChart" width="350" height="180"></canvas>
+        <script>
+
+          var income = [280, 350, 410, 502, 250, 809, 947];
+          var days = ["Day1", "Day2", "Day3", "Day4", "Day5", "Day6", "Day7"];
+          var lineCtx = document.getElementById("myLineChart");
+
+          var lineData = {
+            labels: days,
+            datasets: [
+              {
+                fill: false,
+                backgroundColor: "#099FFF",
+                pointHoverBackgroundColor: "#099FFF",
+                pointBackgroundColor: "#FA163F",
+                pointRadius: 5,
+                pointHoverColor: "white",
+                showLine: true,
+                borderColor: "#099FFF",
+                pointHoverBorderColor: "#FA163F",
+                pointHoverRadius: 10,
+                pointHoverBorderWidth: 5,
+                lineTension: 0.9,
+                data: income,
+                // labels: days,
+                // borderColor: ['#099FFF', '#099FFF'],
+                borderWidth: [2, 2]
+              },
+            ],
+          };
+
+          var lineOptions = {
+            legend: {
+              display: false
+            },
+            title: {
+              display: true,
+              text: 'Revenue in this Week',
+              position: 'top'
+            },
+            rotation: -0.7 * Math.PI,
+
+            scales: {
+              xAxes: [{
+                display: true,
+                gridLines: { color: "#FFFFFF" },
+                scaleLabel: {
+                  display: true,
+                  labelString: 'Days',
+                  fontColor: '#FFFFFF',
+                  fontSize: 14
+                },
+                ticks: {
+                  fontColor: "#FFFFFF",
+                  fontSize: 10
+                }
+              }],
+              yAxes: [{
+                display: true,
+                gridLines: { color: "#FFFFFF" },
+                scaleLabel: {
+                  display: true,
+                  labelString: 'Profit in Rs.',
+                  fontColor: '#FFFFFF',
+                  fontSize: 14
+                },
+                ticks: {
+                  fontColor: "#FFFFFF",
+                  fontSize: 10,
+                  stepSize: 200,
+                }
+              }]
+            }
+          };
+
+          var myLineChart = new Chart(lineCtx, {
+            type: 'line',
+            data: lineData,
+            options: lineOptions
+          });
+
+
+
+          // var myLineChart = new Chart(lineCtx, {
+          //   type: 'line',
+          //   data: {
+          //     labels: days,
+          //     borderColor: "#3e95cd",
+          //     backgroundColor: "#FFFFFF",
+          //     fill: false,
+          //     datasets: [
+          //       {
+          //         data: income
+          //       }
+          //     ],
+          //   }
+          // });
+        </script>
+      </span>
+      <span class="dataText">Revenue</span>
+    </div>
+    <div class="dash double item4">
+      <span class="ratingCol1">
+        <i class="row1 dashIcon fa fa-star fa-2x" aria-hidden="true"></i>
+        <span class="rowRating">
+          <i class="dashIcon fa fa-star" aria-hidden="true"></i>
+          <i class="dashIcon fa fa-star" aria-hidden="true"></i>
+          <i class="dashIcon fa fa-star" aria-hidden="true"></i>
+          <i class="dashIcon fa fa-star" aria-hidden="true"></i>
+        </span>
+      </span>
+      <span class="data">Rating <span class="big">4.7 / 5.0</span></span>
+      <span class="dataText">
+        Rated by 200+ Customers
+        <small><br />over 500+ customers</small>
+      </span>
+    </div>
+    <div class="dash item5">
+      <i class="dashIcon fa fa-user fa-2x" aria-hidden="true"></i>
+      <span class="data">200+</span>
+      <span class="dataText">Employees</span>
+    </div>
+    <div class="dash item6">
+      <i class="dashIcon fa fa-home fa-2x" aria-hidden="true"></i>
+      <span class="data">200+</span>
+      <span class="dataText">HiVe Centers</span>
+    </div>
+    <div class="dash triple item7">
+      <span class="dataText">Total HiVe Vehicles</span>
+      <canvas id="pieChart" width="350px" height="200px"></canvas>
+      <script>
+        var pieChart = document.getElementById("pieChart").getContext('2d');
+        Chart.defaults.global.defaultFontColor = '#FFFFFF';
+        Chart.defaults.global.defaultFontSize = 14;
+        var pieData = {
+          labels: ["Auto Rickshaw", "Bicycle", "Scooter", "Car", "Bikes"],
+          datasets: [
+            {
+              fill: true,
+              backgroundColor: ["#30FF00", "#FA163F", "#FF6600", "#FFFF00", "#CC00FF"],
+              data: [15, 50, 20, 30, 5],
+              borderColor: ['#FFFFFF', '#FFFFFF'],
+              borderWidth: [2, 2]
+            }
+          ]
+        };
+
+        var pieOptions = {
+          // title: {
+          //   display: true,
+          //   text: '',
+          //   position: 'top'
+          // },
+          rotation: -0.7 * Math.PI
+        };
+
+        var myBarChart = new Chart(pieChart, {
+          type: 'pie',
+          data: pieData,
+          options: pieOptions
+        });
+
+      </script>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,267 @@
+:root
+{
+    --light_blue: #D2FDFF;
+    --dark_blue: #64DFDF;
+    --black: #272727;
+    --height: 750px;
+    --widthSideBar: 320px;
+    --widthCell: 330px;
+    --widthLogo: 280px;
+    --heightLogo: 140px;
+    --dropBg: #198d9c;
+    --dropC: #272727;
+    /* --hoverBg: #202f2f;
+    --hoverColor: #40b8b8; */
+}
+
+.bar
+{
+    display: grid;
+    grid-template-columns: auto 1216px;
+    background-color: var(--light_blue);
+    margin: 0px 0px;
+    min-height: 100%;
+}
+
+a{
+    text-decoration: none;
+    color: none;
+}
+
+.sideBar
+{
+    grid-column: 1 / 2;
+    grid-row: 1/ span 3;
+    background-color: var(--black);
+    width: var(--widthSideBar);
+    height: max-content;
+    min-height: 100%;
+}
+
+.sideBar .logoBox
+{
+    position: relative;
+    background-color: inherit;
+    /* padding: 10px; */
+    width: inherit;
+}
+
+.sideBar .logo
+{
+    width: var(--widthLogo);
+    height: var(--heightLogo);
+    background-color: var(--light_blue);
+    border: 10px solid var(--dark_blue);
+    border-radius: 25px;
+    margin: 5px;
+}
+
+.sideBar .logoImage
+{
+    background-image: url('logo.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    width: var(--widthLogo);
+    height: var(--heightLogo);
+}
+
+.sideBar .menu
+{
+    position: relative;
+    background-color: inherit;
+    color: var(--dark_blue);
+    font-size: large;
+    /* padding: 10px; */
+    width: inherit;
+}   
+
+.sideBox
+{
+    display: grid;
+    grid-template-columns: 80px auto 50px;
+    align-items: center;
+    background-color: var(--black);
+    color: var(--dark_blue);
+    width: inherit;
+    padding: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    border-bottom: 2px solid var(--dark_blue);
+}
+
+.sideIcon
+{
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+.sideText
+{
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    font-size: larger;
+    font-weight: bolder;
+}
+
+.sideTrailIcon
+{
+    width: 10px;
+    height: 10px;
+    border: 2px solid var(--dark_blue);
+    border-width: 0px 3px 3px 0px;
+    display: inline-grid;
+    transform: rotate(45deg);
+}
+
+.dropdownContent
+{
+    display: none;
+    grid-column: 1 / 4;
+}
+
+.sideBox:hover, .navBarDrop:hover
+{
+    background-color: #000000;
+    cursor: pointer;
+}
+
+.sideBox:hover .dropdownContent
+{
+    border-top: 2px solid var(--light_blue);;
+    margin-top: 10px;
+    display:inline-block;
+}
+
+.navBar
+{
+    grid-column: 2 / 3;
+    grid-row: 1/2;
+    background-color: var(--black);
+    color: var(--dark_blue);
+    width: inherit;
+    padding: 10px;
+    padding-left: 1px;
+    height: 40px;
+}
+
+.navBar li
+{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.navBar ul {
+    position: relative;
+    top: -10px;
+    list-style-type: none;
+    justify-content: center;
+    width: inherit;
+}
+
+li {
+    float: right;
+}
+  
+li a {
+    display: block;
+    padding: 10px;
+    color: var(--dark_blue);
+    text-align: center;
+    justify-content: center;
+    font-size: larger;
+    position: relative;
+    top: -5px;
+}
+
+.pageName, li.hamburgerIcon
+{
+    font-weight: 900;
+}
+
+.down:after {
+    content: ' \25BC';
+}
+
+.down:hover::after
+{
+    content: '';
+}
+
+.navBarDropDownContent
+{
+    display: none;
+}
+
+.navBarDrop
+{
+    position: relative;
+    right: -10px;
+    display: grid;
+    grid-template-columns: 40px auto 25px;
+    align-items: center;
+    row-gap: 5px;
+    column-gap: 0px;
+    background-color: var(--black);
+    color: var(--dark_blue);
+    width: inherit;
+    padding: 5px;
+    text-align: center;
+}
+
+.navBarDropIcon
+{
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+.navBarDropText
+{
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    font-size: medium;
+    font-weight: bolder;
+}
+
+.down:hover .navBarDropDownContent
+{
+    padding-top: 10px;
+    display: block;
+}
+
+.navBarDropDownContent .navBarDrop:hover, .dropdownContent:hover .sideBox:hover
+{
+    background-color: var(--dark_blue);
+    color: var(--black);
+}
+
+.userProfile
+{
+    background-image: url('user-profile.png');
+    background-size: 45px 45px;
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+}
+
+.notification
+{
+    position: relative;
+    top: -10px;
+    padding: 10px;
+    border: 2px solid var(--dark_blue);
+    border-radius: 20%;
+}
+
+.notify
+{
+    position: relative;
+    top: -60px;
+    left: 30px;
+    height: 22px;
+    width: 22px;
+    background-color: var(--dark_blue);
+    color: var(--black);
+    font-weight: bolder;
+    border-radius: 50%;
+}

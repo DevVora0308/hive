@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-database.js"></script>
+  <script src="firebase-app.js"></script>
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+      https://firebase.google.com/docs/web/setup#available-libraries -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="getSideBar.js"></script>
+  <script src="getPageName.js"></script>
+  <script src="displayTable.js"></script>
+  <link rel="stylesheet" href="AddPage.css">
+  <script src="firebase-app.js"></script>
+	<title>Add Employee</title>
+</head>  
+<body onload="getPageName();">
+  <div w3-include-html="sideBar.html"></div>
+  <script>
+    includeHTML();
+  </script>
+  <div class="column2">
+    <div class="card">
+    	<h1><i><u>Add Employee Information</u></i></h1><hr>
+      <form id="idForm" class="idForm" action="?" method="post">
+            <label for="fName">First Name:</label>
+            <input type="text" name="fName" id="fName" autocomplete="Off" placeholder="John" >
+            &emsp;&emsp;&emsp;
+            <label for="lName">Last Name:</label>
+            <input type="text" name="lName" id="lName" autocomplete="Off" placeholder="Doe" >
+            <span id="errorFname"></span><span id="errorLname"></span><br>
+            <label for="gender">Gender:</label>
+            <input type="radio" name="gender" id="male" value="Male"> Male
+            <input type="radio" name="gender" id="female" value="Female"> Female
+            <input type="radio" name="gender" id="others" value="Others"> Others
+            &emsp;&emsp;&emsp;&nbsp;
+            <label for="dob">Birth Date:</label>
+            <input type="date" name="dob" id="dob" max="2010-12-31" min="1910-12-31" >
+            <span id="errorGender"></span><span id="errorDOB"></span><br>
+            <label for="email">Email Id.:</label>
+            <input type="email" name="email" id="email" autocomplete="On" placeholder="example@air.com" >
+            &emsp;&emsp;&emsp;&emsp;
+            <label for="mobileNo">Mobile No.:</label>
+            <input type="tel" id="mobileNo" name="mobileNo" autocomplete="On" placeholder="9857641895" pattern="[0-9]{10}"  > 
+            <span id="errorEmail"></span><span id="errorMobileNo"></span><br>
+            <label for="jobProfile">Job Profile:</label>
+            <input type="text" name="jobProfile" id="jobProfile"  placeholder="Admin">
+            <span id="errorJobProfile"></span><br>
+            <label for="address">Address:</label>
+            <textarea type="text" name="address" id="address" rows="2" cols="90" placeholder="Enter Your Address..." autocomplete="off" ></textarea>
+            <span id="errorAddress"></span><br>
+        <button type="button" value="ADD EMPLOYEE" name="addEmp" class="button" onclick="validateDetails()">Add Employee</button>
+    </form>
+    </div>
+  </div>
+</body>
+</html>
